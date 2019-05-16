@@ -6,12 +6,8 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 return
             }
 
-            //$(dom.parentNode).find(".answer").remove()
-
             const result = data.ext.result
             const output = data.out
-            //const result_addon_00 = data.ext.result_addon[0]
-            //const result_addon_01 = data.ext.result_addon[1]
 
             const grid = data.in[0]
             const width = grid[0].length
@@ -31,19 +27,6 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
 
             /*----------------------------------------------*
              *
-             * message
-             *
-             *----------------------------------------------*/
-            /*
-            if (! result) {
-                $(dom).addClass('output').prepend(
-                    '<div>' + result_addon_00 + '</div>').css(
-                        {'border': '0','display': 'block',})
-            }
-            */
-
-            /*----------------------------------------------*
-             *
              * attr
              *
              *----------------------------------------------*/
@@ -58,19 +41,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                     },
                     boundary_block: {
                         'stroke': '#2080B8',
-                        'fill': 'orange',
-                        'fill': '#faba00',
-                        'fill': "#7FBDE5",
-                        'fill': "#6FB3DE",
-                        'fill': "#5FA9D6",
-                        'fill': "#4F9FCF",
                         'fill': "#4094C7",
-                    /*
-                    "#308AC0",
-                    "#2080B8",
-                    "#1076B1",
-                    "#006CA9",
-                    */
                     },
                 },
             }
@@ -95,7 +66,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 for (let c = 0; c < width; c += 1) {
                     const cell = paper.rect(SIZE*c+os, 
                         SIZE*r+os, SIZE, SIZE)
-                    if (boundary_dic[r*100+c]) {
+                    if (result && boundary_dic[r*100+c]) {
                         cell.attr(attr.grid.boundary_block)
                     } else if (grid[r][c] === 'X') {
                         cell.attr(attr.grid.block)
