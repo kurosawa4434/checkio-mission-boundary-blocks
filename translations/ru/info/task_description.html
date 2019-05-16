@@ -1,0 +1,75 @@
+<!-- Describe task in general -->
+<p>
+	Вам предоставлена длинная строка (набранная моноширинным шрифтом), и вы должны разбить ее, чтобы соблюсти заданную ширину.
+	После этого вам нужно отформатировать текст в соответствии с заданным стилем: 'l' означает, что вы должны выровнять текст по левому краю - <strong>l</strong>eft, 'c' - по центру -  <strong>c</strong>enter, 'r' - по правому краю - <strong>r</strong>ight, а 'j' означает, что вы должны выровнять текст по ширине - <strong>j</strong>ustify.
+	И, наконец, строки вывода не должны заканчиваться пробелами.
+</p>
+
+<p>
+	Если вам нужно поместить 2 * n + 1 пробела вокруг строки, чтобы отцентрировать ее, то поставьте n пробелов вперед, а не n + 1.
+</p>
+
+<p>
+	Правила выравнивания текста:
+	<ul>
+		<li>Поскольку мы не всегда можем поставить одинаковое количество пробелов между словами в строке, поместите большие блоки пробелов сначала. Например: X---X---X--X--X--X, когда вам нужно поместить 12 пробелов в 5 местах: 3-3-2-2-2.</li>
+		<li>Не выравнивайте последнюю строку текста.</li>
+	</ul>
+</p>
+
+<p>
+	Вам не нужно будет разбивать слово на две части, так как предоставленной ширины вполне достаточно.
+</p>
+
+<!-- Explain input and output values -->
+<p>
+	<strong>Входные данные:</strong>
+	Текст (строка -str), ширина (целое число -int) и стиль (строка -str).
+</p>
+
+<p>
+	<strong>Выходные данные:</strong>
+	Отформатированный текст (строка -str).
+</p>
+
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+<p>
+	<strong>Примеры:</strong>
+</p>
+
+<pre class="brush: python">
+text = "Hi, my name is Alex and I am 18 years old."
+
+text_formatting(text, 20, 'l') == \
+"""Hi, my name is Alex
+and I am 18 years
+old."""
+
+text_formatting(text, 20, 'c') == \
+"""Hi, my name is Alex
+ and I am 18 years
+        old."""
+
+text_formatting(text, 20, 'r') == \
+""" Hi, my name is Alex
+   and I am 18 years
+                old."""
+
+text_formatting(text, 20, 'j') == \
+"""Hi,  my name is Alex
+and  I  am  18 years
+old."""
+</pre>
+</div>
+
+<p>
+	<strong>Предварительное условие:</strong>
+<ul>
+	<li>all(len(word) <= width for word in text.split())</li>
+	<li>'\n' not in text</li>
+	<li>style in ('l', 'c', 'r', 'j')</li>
+	<li>0 < len(text) <= 1000</li>
+</ul>
+</p>
