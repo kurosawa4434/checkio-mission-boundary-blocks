@@ -1,4 +1,4 @@
-﻿checkio-mission-text-formatting
+﻿checkio-mission-boundary-blocks
 ===============================
 
-Another CheckiO mission: Text Formatting
+Another CheckiO mission: Boundary Blocks
