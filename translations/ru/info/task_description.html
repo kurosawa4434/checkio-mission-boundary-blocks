@@ -1,0 +1,59 @@
+<!-- Describe task in general -->
+
+<p>
+This mission is like a subset of 
+Эта миссия является разновидностью другой миссии под названием <a href='https://py.checkio.org/en/mission/visibilities/'>“Visibilities”</a>.
+</p>
+
+<p>
+Вам предоставляется список строк в виде сетки.
+Пустые ячейки будут представлены '.', а блоки - 'X'.
+Блоки не примыкают друг к другу ни вертикально, ни горизонтально.
+</p>
+<p>
+Одна область состоит из пустых ячеек, смежных друг с другом по вертикали и по горизонтали.
+Вы должны вернуть координаты блоков, которые составляют границу.
+</p>
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+<p>
+	<strong>Примеры:</strong>
+</p>
+
+<pre class="brush: python">
+set(boundary_blocks(['..X',
+                     '.X.',
+                     'X..'])) == {(0, 2), (1, 1), (2, 0)}
+set(boundary_blocks(['...',
+                     '.X.',
+                     'X..'])) == set()
+set(boundary_blocks(['X.X.',
+                     '.X..',
+                     '..X.',
+                     '....'])) == {(0, 0), (0, 2), (1, 1)}
+</pre>
+<img src='{{MEDIA}}boundary_blocks_example.png' title='example'>
+</div>
+
+<!-- Explain input and output values -->
+<p>
+	<strong>Входные данные:</strong>
+Список строк.
+</p>
+
+<p>
+	<strong>Выходные данные:</strong>
+ Итерируемые кортежи из двух целых чисел (В порядке строк, столбцов).
+</p>
+
+
+
+<p>
+	<strong>Предварительные условия:</strong>
+<ul>
+	<li>3 &le; len(grid) &le; 20</li>
+	<li>3 &le; len(grid[0]) &le; 20</li>
+    <li>all(set(row) <= {'.', 'X'} for row in grid)
+</ul>
+</p>
